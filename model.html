@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Модель</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="map_m/map_m.css"/>
+		<link rel="stylesheet" href="slider/slider_lib.css"/>
+		<link rel="stylesheet" href="tools/main.css"/>
+		<script type='text/javascript' src='map_m/map_m.js'></script>
+		<script type='text/javascript' src='slider/slider_lib.js'></script>
+		<script type='text/javascript' src='tools/filesaver.js'></script>
+		<script type='text/javascript' src='tools/main.js'></script>		
+		<script type='text/javascript' src='tools/init_tools.js'></script>
+
+	</head>
+	<body>
+		<div id='e-body'>
+			<div id='e-controls'>
+				<div class='e-label' style="color: #000033">Модель Большой Кольцевой Линии (БКЛ) московского метрополитена</div>
+				<div class="e-fill">
+					Данная модель симулирует движение поездов по БКЛ с учетом пассажиропотока на станциях в зависимости от времени. В качестве параметров используются количество вагонов в поезде (параметрический синтез) и количество поездов на линии (структурный синтез).
+				</div>
+				<div class='e-label'>Модельное время (за 1 секунду модельного времени)</div>
+				<div class="e-fill">
+					<div id='e-time-slider'	style="position: relative; height: 30px; width: 70%; "></div>
+					<div id='e-time-value'	style="position: relative; width: 29%; "></div>
+				</div>
+				<div class='e-label'>Количество вагонов</div>
+				<div class="e-fill">
+					<div id='e-carriage-slider'	style="position: relative; height: 30px; width: 70%; "></div>
+					<div id='e-carriage-value'	style="position: relative; width: 29%; "></div>
+				</div>
+
+				<div class='e-label'>Количество поездов</div>
+				<div class="e-fill">
+					<div id='e-train-slider'	style="position: relative; height: 30px; width: 70%; "></div>
+					<div id='e-train-value'	style="position: relative; width: 29%; "></div>
+				</div>
+
+				<div class='e-label'>Управление моделью</div>
+
+				<div class="e-fill">
+					<div class='e-button' onclick="model_play()" style="text-align: center; height: 30px; width: 33%; "><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 20 20"><style>	.e-button			.but {fill: #777777;}	.e-button:hover		.but {fill: #444444;}	.e-button:active	.but {fill: white;}</style><path class="but" d="M 5,5 L 5,15 L 15,10 z"/></svg></div>
+					<div class='e-button' onclick="model_stop()" style="text-align: center; height: 30px; width: 33%; "><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 20 20"><style>	.e-button			.but {fill: #777777;}	.e-button:hover		.but {fill: #222222;}	.e-button:active	.but {fill: white;}</style><path class="but" d="M 5,5 L 5,15 L 15,15 L 15,5 z"/></svg></div>
+					<div class='e-button' onclick="model_pause()" style="text-align: center; height: 30px; width: 33%; "><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 20 20"><style>	.e-button			.but {fill: #777777;}	.e-button:hover		.but {fill: #222222;}	.e-button:active	.but {fill: white;}</style><path class="but" d="M 4,5 L 4,15 L 8,15 L 8,5 z"/><path class="but" d="M 12,5 L 12,15 L 16,15 L 16,5 z"/></svg></div>
+				</div>
+
+				<div class='e-label'>Характеристики системы</div>
+				<div class="e-fill">
+					<table class='s-table'>
+						<tr><td class='l-statistic'>Время в системе</td><td class='s-statistic'  id="s-inSystem"></td></tr>
+						<tr><td class='l-statistic'>Ожидание агента на станции</td><td class='s-statistic'  id="s-wait"></td></tr>
+						<tr><td class='l-statistic'>Время поездки</td><td class='s-statistic'  id="s-inTrain"></td></tr>
+						<tr><td class='l-statistic'>Людей ожидает больше 2х минут</td><td class='s-statistic'  id="s-moreThat"></td></tr>
+						<tr><td class='l-statistic'>Максильманое время ожидания</td><td class='s-statistic'  id="s-wMax"></td></tr>
+						<tr><td class='l-statistic'>Людей в среднем на странции</td><td class='s-statistic'  id="s-sCount"></td></tr>
+						<tr><td class='l-statistic'>Финальные вероятности</td><td class='s-statistic'  id="s-pCount"></td></tr>
+					</table>
+				</div>
+							
+			</div>
+	
+			<div id='e-swich'>
+				
+			</div>
+	
+			<div id='e-map'>			
+			</div>	
+		</div>
+	</body>
+</html>

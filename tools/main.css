@@ -1,0 +1,73 @@
+body {
+	-webkit-user-select:	none;
+	-moz-user-select:		none;
+	-ms-user-select: 		none;
+	font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+	font-size: 14px;
+	padding: 0; margin: 0;
+	width: 100%; height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+div {
+	position: absolute;
+}
+#e-body {
+	background: #effbef;
+	width: 100%;
+	height: 100%;
+}
+#e-controls, #e-swich, #e-map {
+	top: 3%;
+	bottom: 3%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+#e-controls {
+	left: 3%;
+	width: 21%;
+	border: 1px solid #AAAAAA;
+	background: white;
+}
+#e-swich {
+	left: 24%;
+	width: 3%;
+}
+#e-map {
+	left: 27%;
+	width: 70%;
+	border: 1px solid #AAAAAA;
+	background: white;
+}
+.e-label {
+	border-top: 1px solid #aaa;
+	font-weight: bold;
+	color: #103e10; 
+}
+
+.s-statistic {
+	width: 50%;
+	display: inline-block;
+	margin: auto;
+	position: relative;
+}
+.l-statistic {
+	display: inline-block;
+	margin: auto;
+	width: 50%;
+}
+
+.e-label, .e-fill {
+	padding: 2px;
+	box-sizing: border-box;
+	width: 100%;
+	position: relative;
+	text-align: center;
+	font-size: 14px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.e-button			{	position: relative;	}
+.e-button:hover		{	background: #eee;	}
+.e-button:active 	{	background: #999;	}
